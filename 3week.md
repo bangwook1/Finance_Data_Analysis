@@ -57,7 +57,6 @@ print( '4. 투자 비중*기대수익률: \n', weights )
 # 각각의 투자 비중과 주식 기대수익률의 곱을 모두 합해 포트폴리오의 기대수익률을 계산한다
 expectedReturnOfPortfolio = np.sum( weights*expectedReturns )
 print( '5. 포트폴리오의 기대수익률: {:.2%}'.format( expectedReturnOfPortfolio ) )
-
  ~~~
 
  - pandas 이용해 실제데이터로 계산
@@ -105,7 +104,6 @@ weights = weights / sum( weights )
 # weights와 meanReturns의 차원은 1x6이다
 # 행렬의 곱셈 연산을 위해 meanReturns 행렬을 전치한다(meanReturns.T)
 portReturnsExpected = np.sum( weights * meanReturns.T )
-
  ~~~
 
 
@@ -146,8 +144,6 @@ pcov = dailySimpleReturns.cov( ).values
 # 행렬 연산으로 분산을 계산한다. 즉, [비중 * 공분산 행렬 * 비중의 전치행렬]의 연산을 수행해 포트폴리오의 분산을 varp 변수에 저장하고 출력한다
 varp = weights*pcov*weights.T
 print( '포트폴리오 분산은 ', varp )
-
-
  ~~~
 
  ## 3.2 최소분산포트폴리오
